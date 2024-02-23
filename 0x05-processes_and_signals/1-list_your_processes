@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
-
+# Display the list of processes using the ps command with appropriate options
 # Display the header
 echo "USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND"
 
-# Display the list of processes using the ps command with appropriate options
 ps aux --forest
