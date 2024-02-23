@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Get the PID of the current script
+current_pid=$$
+
+# Get the PID and process name of processes containing the word "bash" from /proc directory
+for pid_dir in /proc/[0-9]*; do
+    pid=$(basename "$pid_dir")
+    cmd=$(tr -d '\0' < "$pid_dir/cmdline")
+    if [[ "$cmd" == *bash* ]]; then
+        echo "$pid bash"
+    fi
+done | grep -v "$current_pid"
