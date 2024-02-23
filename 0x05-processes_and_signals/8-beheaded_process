@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Find the process ID of 7-highlander
 pid=$(pgrep -f '7-highlander')
 

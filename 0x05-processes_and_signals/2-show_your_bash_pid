@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-
+# Display lines containing the word "bash" using the ps command
 # shellcheck disable=SC2009
 
-# Display lines containing the word "bash" using the ps command
 ps aux | grep bash | grep -v grep
