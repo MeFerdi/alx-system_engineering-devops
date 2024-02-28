@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Check if running as root
+if [ "$(id -u)" -ne 0 ]; then
+    echo "Please run this script as root"
+    exit 1
+fi
+
+# Define new IP addresses
+LOCALHOST_IP="127.0.0.2"
+FACEBOOK_IP="8.8.8.8"
+
+# Modify /etc/hosts file
+sed -i "s/^127.0.0.1\s*localhost/127.0.0.1 localhost\n$LOCALHOST_IP localhost/g" /etc/hosts
+echo "$FACEBOOK_IP facebook.com" >> /etc/hosts
+
+# Apply changes to hostname
+hostnamectl set-hostname "$(hostname)"
