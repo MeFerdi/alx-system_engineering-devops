@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 Using reddit's API
 """

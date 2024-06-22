@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-
 """
-Number of Subscribers for a given subreddit
+number of subscribers for a given subreddit
 """
 
 from requests import get
@@ -26,4 +25,4 @@ def number_of_subscribers(subreddit):
 
     except Exception:
         return 0
-        
+    
