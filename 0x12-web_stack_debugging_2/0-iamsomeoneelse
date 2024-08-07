@@ -1,5 +1,5 @@
-#!/bin/bash
-if [ "$#" -ne 1 ]; then
-    exit 1
-fi
-su -c "whoami" "$1"
+#!/usr/bin/env bash
+# A Bash script that accepts one argument
+# The script run the 'whoami' command under the user passed as an argument
+
+sudo -u "$1" whoami
