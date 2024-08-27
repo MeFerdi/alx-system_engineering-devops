@@ -1,0 +1,218 @@
+<html><head><base href="/farmers">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urban Farm Connect - For Farmers</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f8ea;
+        color: #333;
+    }
+    header {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+    }
+    nav {
+        background-color: #45a049;
+        padding: 0.5rem;
+    }
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 0 1rem;
+    }
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+    .hero {
+        background-image: url('https://urbanfarmconnect.com/images/farmer-field.jpg');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        padding: 4rem 2rem;
+        margin-bottom: 2rem;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    .hero p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+    .feature {
+        background-color: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .feature-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    .cta-button {
+        display: inline-block;
+        background-color: #4CAF50;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 1.1rem;
+        transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+        background-color: #45a049;
+    }
+    .testimonial {
+        background-color: white;
+        border-radius: 8px;
+        padding: 2rem;
+        margin-top: 2rem;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .testimonial-text {
+        font-style: italic;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .testimonial-author {
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Urban Farm Connect</h1>
+        <p>Empowering Farmers, Connecting Communities</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="https://urbanfarmconnect.com/marketplace">Marketplace</a></li>
+            <li><a href="https://urbanfarmconnect.com/farmers">For Farmers</a></li>
+            <li><a href="https://urbanfarmconnect.com/retailers">For Retailers</a></li>
+            <li><a href="https://urbanfarmconnect.com/about">About Us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="hero">
+            <h1>Grow Your Farm's Reach</h1>
+            <p>Connect directly with urban retailers and expand your market presence</p>
+            <a href="https://urbanfarmconnect.com/farmers/signup" class="cta-button">Join Urban Farm Connect</a>
+        </section>
+        
+        <section class="features">
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h3>Market Insights</h3>
+                <p>Access real-time data on market trends and pricing to make informed decisions.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🚚</div>
+                <h3>Simplified Logistics</h3>
+                <p>Streamline your delivery process with our integrated transportation network.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <h3>Fair Pricing</h3>
+                <p>Set your own prices and receive fair compensation for your quality produce.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🤝</div>
+                <h3>Direct Relationships</h3>
+                <p>Build lasting connections with urban retailers who value your products.</p>
+            </div>
+        </section>
+
+        <section class="testimonial">
+            <p class="testimonial-text">"Urban Farm Connect has transformed the way I do business. I've expanded my customer base and increased my profits while focusing on what I love - growing great produce."</p>
+            <p class="testimonial-author">- Sarah Johnson, Green Meadows Farm</p>
+        </section>
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const ctaButton = document.querySelector('.cta-button');
+        
+        ctaButton.addEventListener('mouseover', function() {
+            this.style.transform = 'scale(1.05)';
+        });
+        
+        ctaButton.addEventListener('mouseout', function() {
+            this.style.transform = 'scale(1)';
+        });
+
+        // Animated counter for farmer statistics
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Add statistics section
+        const statsSection = document.createElement('section');
+        statsSection.innerHTML = `
+            <div style="display: flex; justify-content: space-around; margin-top: 2rem;">
+                <div>
+                    <h3>Farmers on board</h3>
+                    <p id="farmerCount">0</p>
+                </div>
+                <div>
+                    <h3>Products listed</h3>
+                    <p id="productCount">0</p>
+                </div>
+                <div>
+                    <h3>Urban retailers reached</h3>
+                    <p id="retailerCount">0</p>
+                </div>
+            </div>
+        `;
+        document.querySelector('main').appendChild(statsSection);
+
+        // Animate statistics when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateValue(document.getElementById('farmerCount'), 0, 1500, 2000);
+                    animateValue(document.getElementById('productCount'), 0, 5000, 2000);
+                    animateValue(document.getElementById('retailerCount'), 0, 750, 2000);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(statsSection);
+    });
+    </script>
+</body></html>

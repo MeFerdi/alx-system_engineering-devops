@@ -1,0 +1,319 @@
+<html><head><base href="https://urbanfarmconnect.com/marketplace">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urban Farm Connect - Marketplace</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    :root {
+        --primary-color: #4CAF50;
+        --secondary-color: #FFA000;
+        --text-color: #333;
+        --bg-color: #F5F5F5;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    header {
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--primary-color);
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+    }
+
+    .nav-links li {
+        margin-left: 30px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--primary-color);
+    }
+
+    main {
+        padding: 40px 0;
+    }
+
+    h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .filters {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    .search-bar {
+        flex-grow: 1;
+        margin-right: 20px;
+    }
+
+    .search-bar input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .category-filter select {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+    }
+
+    .product-card {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .product-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .product-info {
+        padding: 20px;
+    }
+
+    .product-name {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .product-farmer {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 10px;
+    }
+
+    .product-price {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--primary-color);
+    }
+
+    .add-to-cart {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        margin-top: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .add-to-cart:hover {
+        background-color: #45a049;
+    }
+
+    footer {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 40px;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Urban Farm Connect</div>
+                <ul class="nav-links">
+                    <li><a href="https://urbanfarmconnect.com/">Home</a></li>
+                    <li><a href="https://urbanfarmconnect.com/farmers">For Farmers</a></li>
+                    <li><a href="https://urbanfarmconnect.com/retailers">For Retailers</a></li>
+                    <li><a href="https://urbanfarmconnect.com/about">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Marketplace</h1>
+            <div class="filters">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products...">
+                </div>
+                <div class="category-filter">
+                    <select>
+                        <option value="">All Categories</option>
+                        <option value="fruits">Fruits</option>
+                        <option value="vegetables">Vegetables</option>
+                        <option value="dairy">Dairy</option>
+                        <option value="herbs">Herbs</option>
+                    </select>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://urbanfarmconnect.com/images/tomatoes.jpg" alt="Fresh organic tomatoes" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Organic Tomatoes</h3>
+                        <p class="product-farmer">Green Acres Farm</p>
+                        <p class="product-price">$2.99/lb</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://urbanfarmconnect.com/images/lettuce.jpg" alt="Crisp green lettuce" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Fresh Lettuce</h3>
+                        <p class="product-farmer">Sunny Fields</p>
+                        <p class="product-price">$1.50/head</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://urbanfarmconnect.com/images/carrots.jpg" alt="Organic carrots" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Organic Carrots</h3>
+                        <p class="product-farmer">Root Valley Farm</p>
+                        <p class="product-price">$2.25/lb</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://urbanfarmconnect.com/images/apples.jpg" alt="Fresh red apples" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Gala Apples</h3>
+                        <p class="product-farmer">Orchard Hills</p>
+                        <p class="product-price">$3.50/lb</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://urbanfarmconnect.com/images/eggs.jpg" alt="Free-range eggs" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Free-Range Eggs</h3>
+                        <p class="product-farmer">Happy Hens Farm</p>
+                        <p class="product-price">$4.99/dozen</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://urbanfarmconnect.com/images/honey.jpg" alt="Local raw honey" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Raw Honey</h3>
+                        <p class="product-farmer">Busy Bee Apiary</p>
+                        <p class="product-price">$8.50/jar</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Urban Farm Connect. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add to cart functionality
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.parentElement.querySelector('.product-name').textContent;
+                alert(`${productName} added to cart!`);
+                // Here you would typically update the cart state and possibly send data to a server
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('.search-bar input');
+        const productCards = document.querySelectorAll('.product-card');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            productCards.forEach(card => {
+                const productName = card.querySelector('.product-name').textContent.toLowerCase();
+                const productFarmer = card.querySelector('.product-farmer').textContent.toLowerCase();
+                if (productName.includes(searchTerm) || productFarmer.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Category filter functionality
+        const categorySelect = document.querySelector('.category-filter select');
+        categorySelect.addEventListener('change', function() {
+            const selectedCategory = this.value.toLowerCase();
+            productCards.forEach(card => {
+                const productName = card.querySelector('.product-name').textContent.toLowerCase();
+                if (selectedCategory === '' || productName.includes(selectedCategory)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,237 @@
+<html><head><base href="https://urbanfarmconnect.com/retailers/signup">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urban Farm Connect - Retailer Sign Up</title>
+<style>
+    body {
+        font-family: 'Roboto', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+    header {
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+    }
+    nav {
+        background-color: #34495e;
+        padding: 0.5rem;
+    }
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 0 1rem;
+    }
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    main {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    h1 {
+        color: #2c3e50;
+        margin-bottom: 1.5rem;
+    }
+    form {
+        display: grid;
+        gap: 1.5rem;
+    }
+    label {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+    input, select, textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+    button {
+        background-color: #e67e22;
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    button:hover {
+        background-color: #d35400;
+        transform: scale(1.05);
+    }
+    .error {
+        color: #e74c3c;
+        font-size: 0.9rem;
+        margin-top: 0.25rem;
+    }
+    .success-message {
+        background-color: #2ecc71;
+        color: white;
+        padding: 1rem;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+        display: none;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Urban Farm Connect</h1>
+        <p>Fresh From Farm to Your Store</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="https://urbanfarmconnect.com/marketplace">Marketplace</a></li>
+            <li><a href="https://urbanfarmconnect.com/farmers">For Farmers</a></li>
+            <li><a href="https://urbanfarmconnect.com/retailers">For Retailers</a></li>
+            <li><a href="https://urbanfarmconnect.com/about">About Us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Retailer Sign Up</h1>
+        <div class="success-message" id="successMessage">
+            Thank you for signing up! We'll review your application and get back to you shortly.
+        </div>
+        <form id="retailerSignupForm">
+            <div>
+                <label for="businessName">Business Name</label>
+                <input type="text" id="businessName" name="businessName" required>
+                <div class="error" id="businessNameError"></div>
+            </div>
+            <div>
+                <label for="contactName">Contact Name</label>
+                <input type="text" id="contactName" name="contactName" required>
+                <div class="error" id="contactNameError"></div>
+            </div>
+            <div>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error" id="emailError"></div>
+            </div>
+            <div>
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+                <div class="error" id="phoneError"></div>
+            </div>
+            <div>
+                <label for="businessType">Business Type</label>
+                <select id="businessType" name="businessType" required>
+                    <option value="">Select business type</option>
+                    <option value="grocery">Grocery Store</option>
+                    <option value="restaurant">Restaurant</option>
+                    <option value="hotel">Hotel</option>
+                    <option value="caterer">Caterer</option>
+                    <option value="other">Other</option>
+                </select>
+                <div class="error" id="businessTypeError"></div>
+            </div>
+            <div>
+                <label for="address">Business Address</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+                <div class="error" id="addressError"></div>
+            </div>
+            <div>
+                <label for="interests">Products of Interest</label>
+                <textarea id="interests" name="interests" rows="3" placeholder="e.g., Organic vegetables, free-range eggs, artisanal cheeses"></textarea>
+            </div>
+            <div>
+                <button type="submit">Sign Up</button>
+            </div>
+        </form>
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('retailerSignupForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            if (validateForm()) {
+                // Simulate form submission
+                setTimeout(() => {
+                    form.reset();
+                    successMessage.style.display = 'block';
+                    window.scrollTo(0, 0);
+                }, 1000);
+            }
+        });
+
+        function validateForm() {
+            document.querySelectorAll('.error').forEach(el => el.textContent = '');
+            let isValid = true;
+
+            // Business Name validation
+            if (!form.businessName.value.trim()) {
+                document.getElementById('businessNameError').textContent = 'Business name is required';
+                isValid = false;
+            }
+
+            // Contact Name validation
+            if (!form.contactName.value.trim()) {
+                document.getElementById('contactNameError').textContent = 'Contact name is required';
+                isValid = false;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(form.email.value)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email address';
+                isValid = false;
+            }
+
+            // Phone validation
+            const phoneRegex = /^\+?[\d\s-]{10,}$/;
+            if (!phoneRegex.test(form.phone.value)) {
+                document.getElementById('phoneError').textContent = 'Please enter a valid phone number';
+                isValid = false;
+            }
+
+            // Business Type validation
+            if (!form.businessType.value) {
+                document.getElementById('businessTypeError').textContent = 'Please select a business type';
+                isValid = false;
+            }
+
+            // Address validation
+            if (!form.address.value.trim()) {
+                document.getElementById('addressError').textContent = 'Business address is required';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // Add visual feedback on form inputs
+        const inputs = form.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim() !== '') {
+                    this.style.borderColor = '#2ecc71';
+                } else {
+                    this.style.borderColor = '#e74c3c';
+                }
+            });
+        });
+    });
+    </script>
+</body></html>

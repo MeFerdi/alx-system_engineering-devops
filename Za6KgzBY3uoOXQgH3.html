@@ -1,0 +1,258 @@
+<html><head><base href="https://urbanfarmconnect.com/retailers">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urban Farm Connect - For Retailers</title>
+<style>
+    body {
+        font-family: 'Roboto', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+    header {
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+    }
+    nav {
+        background-color: #34495e;
+        padding: 0.5rem;
+    }
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 0 1rem;
+    }
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+    .hero {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://urbanfarmconnect.com/images/fresh-produce.jpg');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        padding: 6rem 2rem;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+    }
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    .hero p {
+        font-size: 1.3rem;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+    }
+    .benefits {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+    .benefit {
+        background-color: white;
+        border-radius: 8px;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    .benefit:hover {
+        transform: translateY(-5px);
+    }
+    .benefit-icon {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+    .cta-button {
+        display: inline-block;
+        background-color: #e67e22;
+        color: white;
+        padding: 1rem 2rem;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .cta-button:hover {
+        background-color: #d35400;
+        transform: scale(1.05);
+    }
+    .featured-products {
+        margin-top: 3rem;
+    }
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+    .product-card {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    .product-card:hover {
+        transform: translateY(-5px);
+    }
+    .product-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    .product-info {
+        padding: 1rem;
+    }
+    .product-name {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    .product-farm {
+        color: #7f8c8d;
+        font-size: 0.9rem;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Urban Farm Connect</h1>
+        <p>Fresh From Farm to Your Store</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="https://urbanfarmconnect.com/marketplace">Marketplace</a></li>
+            <li><a href="https://urbanfarmconnect.com/farmers">For Farmers</a></li>
+            <li><a href="https://urbanfarmconnect.com/retailers">For Retailers</a></li>
+            <li><a href="https://urbanfarmconnect.com/about">About Us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="hero">
+            <h1>Source Fresh, Local Produce</h1>
+            <p>Connect directly with local farmers and revolutionize your supply chain</p>
+            <a href="https://urbanfarmconnect.com/retailers/signup" class="cta-button">Join Urban Farm Connect</a>
+        </section>
+        
+        <section class="benefits">
+            <div class="benefit">
+                <div class="benefit-icon">🥬</div>
+                <h3>Fresh Quality</h3>
+                <p>Access the freshest, highest-quality produce straight from local farms.</p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">💰</div>
+                <h3>Competitive Pricing</h3>
+                <p>Cut out middlemen and enjoy better prices for premium products.</p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">🌱</div>
+                <h3>Sustainability</h3>
+                <p>Reduce food miles and support sustainable farming practices.</p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">🤝</div>
+                <h3>Direct Relationships</h3>
+                <p>Build lasting connections with local farmers and producers.</p>
+            </div>
+        </section>
+
+        <section class="featured-products">
+            <h2>Featured Products</h2>
+            <div class="product-grid">
+                <!-- Product cards will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const ctaButton = document.querySelector('.cta-button');
+        
+        ctaButton.addEventListener('mouseover', function() {
+            this.style.transform = 'scale(1.05)';
+        });
+        
+        ctaButton.addEventListener('mouseout', function() {
+            this.style.transform = 'scale(1)';
+        });
+
+        // Sample product data
+        const products = [
+            { name: "Organic Tomatoes", farm: "Sunshine Valley Farm", image: "https://urbanfarmconnect.com/images/tomatoes.jpg" },
+            { name: "Fresh Lettuce", farm: "Green Fields", image: "https://urbanfarmconnect.com/images/lettuce.jpg" },
+            { name: "Free-range Eggs", farm: "Happy Hens Farm", image: "https://urbanfarmconnect.com/images/eggs.jpg" },
+            { name: "Artisanal Cheese", farm: "Mountain Dairy", image: "https://urbanfarmconnect.com/images/cheese.jpg" },
+            { name: "Honey", farm: "Buzzing Meadows", image: "https://urbanfarmconnect.com/images/honey.jpg" },
+            { name: "Organic Apples", farm: "Orchard Hills", image: "https://urbanfarmconnect.com/images/apples.jpg" }
+        ];
+
+        const productGrid = document.querySelector('.product-grid');
+
+        products.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.classList.add('product-card');
+            productCard.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">${product.name}</div>
+                    <div class="product-farm">${product.farm}</div>
+                </div>
+            `;
+            productGrid.appendChild(productCard);
+        });
+
+        // Add a dynamic counter for available products
+        const counterSection = document.createElement('section');
+        counterSection.innerHTML = `
+            <div style="text-align: center; margin-top: 3rem;">
+                <h2>Our Marketplace</h2>
+                <p>Discover <span id="productCount">0</span> fresh products from local farms</p>
+            </div>
+        `;
+        document.querySelector('main').insertBefore(counterSection, document.querySelector('.featured-products'));
+
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Animate product count when it comes into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateValue(document.getElementById('productCount'), 0, 1500, 2000);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(counterSection);
+    });
+    </script>
+</body></html>

@@ -1,0 +1,268 @@
+<html><head><base href="https://urbanfarmconnect.com/about">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Urban Farm Connect</title>
+<style>
+    body {
+        font-family: 'Lato', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+        line-height: 1.6;
+    }
+    header {
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+    }
+    nav {
+        background-color: #34495e;
+        padding: 0.5rem;
+    }
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 0 1rem;
+    }
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+        color: #e67e22;
+    }
+    main {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+        color: #2c3e50;
+    }
+    .mission-statement {
+        font-size: 1.2rem;
+        font-style: italic;
+        color: #7f8c8d;
+        text-align: center;
+        margin: 2rem 0;
+    }
+    .team-members {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 2rem;
+    }
+    .team-member {
+        width: 200px;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .team-member img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1rem;
+    }
+    .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 2rem auto;
+    }
+    .timeline::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        background-color: #e67e22;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+    }
+    .timeline-item {
+        padding: 10px 40px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+    }
+    .timeline-item::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: -17px;
+        background-color: white;
+        border: 4px solid #e67e22;
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+    }
+    .left {
+        left: 0;
+    }
+    .right {
+        left: 50%;
+    }
+    .left::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        right: 30px;
+        border: medium solid #e67e22;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent #e67e22;
+    }
+    .right::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        left: 30px;
+        border: medium solid #e67e22;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #e67e22 transparent transparent;
+    }
+    .right::after {
+        left: -16px;
+    }
+    .timeline-content {
+        padding: 20px 30px;
+        background-color: white;
+        position: relative;
+        border-radius: 6px;
+        border: 1px solid #e67e22;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Urban Farm Connect</h1>
+        <p>Bridging the Gap Between Farmers and Urban Retailers</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="https://urbanfarmconnect.com/marketplace">Marketplace</a></li>
+            <li><a href="https://urbanfarmconnect.com/farmers">For Farmers</a></li>
+            <li><a href="https://urbanfarmconnect.com/retailers">For Retailers</a></li>
+            <li><a href="https://urbanfarmconnect.com/about">About Us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>About Urban Farm Connect</h1>
+        <p class="mission-statement">
+            "Empowering local farmers and urban retailers to create sustainable, community-driven food systems."
+        </p>
+        <p>
+            Urban Farm Connect was founded in 2020 with a simple yet powerful vision: to revolutionize the way local farmers and urban retailers connect and do business. Our platform serves as a bridge between the agricultural heartland and the bustling city centers, ensuring that fresh, locally-sourced produce reaches urban consumers while supporting small-scale farmers.
+        </p>
+        <h2>Our Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>2020</h3>
+                    <p>Urban Farm Connect is founded by a group of tech enthusiasts and agricultural experts.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>2021</h3>
+                    <p>Launch of our beta platform, connecting 50 farmers with 20 urban retailers.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>2022</h3>
+                    <p>Expansion to five major cities, with over 500 farmers and 200 retailers on board.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>2023</h3>
+                    <p>Introduction of our mobile app and AI-driven crop prediction tools for farmers.</p>
+                </div>
+            </div>
+        </div>
+        <h2>Our Team</h2>
+        <div class="team-members">
+            <div class="team-member">
+                <img src="https://urbanfarmconnect.com/images/team/sarah-johnson.jpg" alt="Sarah Johnson, CEO and Co-founder" width="150" height="150">
+                <h3>Sarah Johnson</h3>
+                <p>CEO and Co-founder</p>
+            </div>
+            <div class="team-member">
+                <img src="https://urbanfarmconnect.com/images/team/michael-chen.jpg" alt="Michael Chen, CTO and Co-founder" width="150" height="150">
+                <h3>Michael Chen</h3>
+                <p>CTO and Co-founder</p>
+            </div>
+            <div class="team-member">
+                <img src="https://urbanfarmconnect.com/images/team/emily-rodriguez.jpg" alt="Emily Rodriguez, Head of Farmer Relations" width="150" height="150">
+                <h3>Emily Rodriguez</h3>
+                <p>Head of Farmer Relations</p>
+            </div>
+            <div class="team-member">
+                <img src="https://urbanfarmconnect.com/images/team/david-okonkwo.jpg" alt="David Okonkwo, Head of Retail Partnerships" width="150" height="150">
+                <h3>David Okonkwo</h3>
+                <p>Head of Retail Partnerships</p>
+            </div>
+        </div>
+        <h2>Our Impact</h2>
+        <p>
+            Since our inception, Urban Farm Connect has:
+        </p>
+        <ul>
+            <li>Facilitated over $10 million in transactions between farmers and urban retailers</li>
+            <li>Reduced food transportation distances by an average of 65%</li>
+            <li>Helped increase income for small-scale farmers by up to 40%</li>
+            <li>Provided urban consumers with access to fresher, more diverse local produce</li>
+        </ul>
+        <p>
+            We're committed to continuing our mission of creating a more sustainable and equitable food system. Join us in reimagining the future of urban food supply!
+        </p>
+    </main>
+    <script>
+        // Add smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add fade-in animation for timeline items
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        timelineItems.forEach(item => {
+            item.style.opacity = 0;
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.5s, transform 0.5s';
+            observer.observe(item);
+        });
+    </script>
+</body></html>

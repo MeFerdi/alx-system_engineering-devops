@@ -1,0 +1,262 @@
+<html><head><base href="https://urbanfarmconnect.com/retailers/signup">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up as a Retailer - Urban Farm Connect</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    :root {
+        --primary-color: #4CAF50;
+        --secondary-color: #FFA000;
+        --text-color: #333;
+        --bg-color: #F5F5F5;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    header {
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--primary-color);
+        text-decoration: none;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+    }
+
+    .nav-links li {
+        margin-left: 30px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--primary-color);
+    }
+
+    .signup-section {
+        padding: 80px 0;
+    }
+
+    .signup-container {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        display: flex;
+    }
+
+    .signup-image {
+        flex: 1;
+        background-image: url('https://images.unsplash.com/photo-1550989460-0adf9ea622e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .signup-form {
+        flex: 1;
+        padding: 40px;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: var(--primary-color);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    button {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    .terms {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    footer {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 80px;
+    }
+
+    @media (max-width: 768px) {
+        .signup-container {
+            flex-direction: column;
+        }
+
+        .signup-image {
+            height: 200px;
+        }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="https://urbanfarmconnect.com/" class="logo">Urban Farm Connect</a>
+                <ul class="nav-links">
+                    <li><a href="https://urbanfarmconnect.com/">Home</a></li>
+                    <li><a href="https://urbanfarmconnect.com/farmers">For Farmers</a></li>
+                    <li><a href="https://urbanfarmconnect.com/retailers">For Retailers</a></li>
+                    <li><a href="https://urbanfarmconnect.com/about">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="signup-section">
+        <div class="container">
+            <div class="signup-container">
+                <div class="signup-image"></div>
+                <div class="signup-form">
+                    <h1>Sign Up as a Retailer</h1>
+                    <form id="retailerSignupForm">
+                        <div class="form-group">
+                            <label for="businessName">Business Name</label>
+                            <input type="text" id="businessName" name="businessName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactName">Contact Name</label>
+                            <input type="text" id="contactName" name="contactName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessType">Business Type</label>
+                            <select id="businessType" name="businessType" required>
+                                <option value="">Select Business Type</option>
+                                <option value="restaurant">Restaurant</option>
+                                <option value="grocery">Grocery Store</option>
+                                <option value="market">Farmers Market</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Business Address</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>
+                        <button type="submit">Sign Up</button>
+                    </form>
+                    <p class="terms">By signing up, you agree to our <a href="https://urbanfarmconnect.com/terms">Terms of Service</a> and <a href="https://urbanfarmconnect.com/privacy">Privacy Policy</a>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Urban Farm Connect. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('retailerSignupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            // Here you would typically send this data to your server
+            console.log('Form submitted with data:', data);
+
+            // For demonstration purposes, we'll just show an alert
+            alert('Thank you for signing up! We will contact you soon to complete your registration.');
+
+            // Clear the form
+            this.reset();
+        });
+
+        // Simple form validation
+        const inputs = document.querySelectorAll('input, select');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim() === '') {
+                    this.style.borderColor = 'red';
+                } else {
+                    this.style.borderColor = '#ddd';
+                }
+            });
+        });
+    </script>
+</body></html>

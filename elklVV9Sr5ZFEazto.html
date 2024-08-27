@@ -1,0 +1,229 @@
+<html><head><base href="https://urbanfarmconnect.com/farmers/signup">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up - Urban Farm Connect</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f8ea;
+        color: #333;
+    }
+    header {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+    }
+    main {
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 {
+        color: #4CAF50;
+        margin-bottom: 1rem;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    label {
+        margin-top: 1rem;
+        font-weight: bold;
+    }
+    input, select, textarea {
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+    button {
+        margin-top: 1.5rem;
+        padding: 0.75rem;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    .error {
+        color: red;
+        font-size: 0.9rem;
+        margin-top: 0.25rem;
+    }
+    .progress-bar {
+        width: 100%;
+        height: 10px;
+        background-color: #e0e0e0;
+        border-radius: 5px;
+        margin-top: 1rem;
+        overflow: hidden;
+    }
+    .progress {
+        width: 0;
+        height: 100%;
+        background-color: #4CAF50;
+        transition: width 0.3s ease;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Urban Farm Connect</h1>
+    </header>
+    <main>
+        <h1>Farmer Sign Up</h1>
+        <form id="signupForm">
+            <label for="farmName">Farm Name</label>
+            <input type="text" id="farmName" name="farmName" required>
+            
+            <label for="farmerName">Your Name</label>
+            <input type="text" id="farmerName" name="farmerName" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="address">Farm Address</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+            
+            <label for="farmType">Farm Type</label>
+            <select id="farmType" name="farmType" required>
+                <option value="">Select farm type</option>
+                <option value="vegetable">Vegetable Farm</option>
+                <option value="fruit">Fruit Orchard</option>
+                <option value="dairy">Dairy Farm</option>
+                <option value="poultry">Poultry Farm</option>
+                <option value="mixed">Mixed Farm</option>
+                <option value="other">Other</option>
+            </select>
+            
+            <label for="products">Main Products (comma-separated)</label>
+            <input type="text" id="products" name="products" required>
+            
+            <label for="farmSize">Farm Size (in acres)</label>
+            <input type="number" id="farmSize" name="farmSize" min="0" step="0.1" required>
+            
+            <label for="organic">Organic Certification</label>
+            <select id="organic" name="organic" required>
+                <option value="">Select certification status</option>
+                <option value="certified">Certified Organic</option>
+                <option value="transitioning">Transitioning to Organic</option>
+                <option value="conventional">Conventional</option>
+            </select>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            
+            <div class="progress-bar">
+                <div class="progress" id="signupProgress"></div>
+            </div>
+            
+            <button type="submit">Sign Up</button>
+        </form>
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('signupForm');
+        const progressBar = document.getElementById('signupProgress');
+        const inputs = form.querySelectorAll('input, select, textarea');
+        
+        function updateProgress() {
+            const totalFields = inputs.length;
+            let filledFields = 0;
+            
+            inputs.forEach(input => {
+                if (input.value.trim() !== '') {
+                    filledFields++;
+                }
+            });
+            
+            const progress = (filledFields / totalFields) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+        
+        inputs.forEach(input => {
+            input.addEventListener('input', updateProgress);
+        });
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Clear previous errors
+            document.querySelectorAll('.error').forEach(el => el.remove());
+            
+            let isValid = true;
+            
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(form.email.value)) {
+                isValid = false;
+                const error = document.createElement('div');
+                error.className = 'error';
+                error.textContent = 'Please enter a valid email address';
+                form.email.parentNode.insertBefore(error, form.email.nextSibling);
+            }
+            
+            // Validate phone number
+            const phoneRegex = /^\d{10}$/;
+            if (!phoneRegex.test(form.phone.value.replace(/\D/g, ''))) {
+                isValid = false;
+                const error = document.createElement('div');
+                error.className = 'error';
+                error.textContent = 'Please enter a valid 10-digit phone number';
+                form.phone.parentNode.insertBefore(error, form.phone.nextSibling);
+            }
+            
+            // Validate password
+            if (form.password.value.length < 8) {
+                isValid = false;
+                const error = document.createElement('div');
+                error.className = 'error';
+                error.textContent = 'Password must be at least 8 characters long';
+                form.password.parentNode.insertBefore(error, form.password.nextSibling);
+            }
+            
+            // Validate password confirmation
+            if (form.password.value !== form.confirmPassword.value) {
+                isValid = false;
+                const error = document.createElement('div');
+                error.className = 'error';
+                error.textContent = 'Passwords do not match';
+                form.confirmPassword.parentNode.insertBefore(error, form.confirmPassword.nextSibling);
+            }
+            
+            if (isValid) {
+                // Simulate form submission
+                const submitButton = form.querySelector('button[type="submit"]');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Submitting...';
+                
+                setTimeout(() => {
+                    alert('Thank you for signing up! We will review your application and contact you soon.');
+                    form.reset();
+                    updateProgress();
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Sign Up';
+                }, 2000);
+            }
+        });
+    });
+    </script>
+</body></html>

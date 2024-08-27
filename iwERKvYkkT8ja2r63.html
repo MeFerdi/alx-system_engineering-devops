@@ -1,0 +1,284 @@
+<html><head><base href="https://urbanfarmconnect.com/about">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Urban Farm Connect</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    :root {
+        --primary-color: #4CAF50;
+        --secondary-color: #FFA000;
+        --text-color: #333;
+        --bg-color: #F5F5F5;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    header {
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--primary-color);
+        text-decoration: none;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+    }
+
+    .nav-links li {
+        margin-left: 30px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--primary-color);
+    }
+
+    .hero {
+        background-image: url('https://images.unsplash.com/photo-1592982548027-55d7ce6b9212?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+    }
+
+    .hero-content {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 30px;
+        border-radius: 10px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 18px;
+        max-width: 600px;
+    }
+
+    .about-section {
+        padding: 80px 0;
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    .about-content h2 {
+        font-size: 36px;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+    }
+
+    .about-image img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .mission-vision {
+        background-color: white;
+        padding: 80px 0;
+    }
+
+    .mission-vision-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    .mission, .vision {
+        padding: 30px;
+        background-color: var(--bg-color);
+        border-radius: 10px;
+    }
+
+    .mission h3, .vision h3 {
+        font-size: 24px;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+    }
+
+    .team-section {
+        padding: 80px 0;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .team-member {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-member img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .team-member-info {
+        padding: 20px;
+    }
+
+    .team-member h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .team-member p {
+        font-size: 14px;
+        color: #666;
+    }
+
+    footer {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    @media (max-width: 768px) {
+        .about-grid, .mission-vision-grid, .team-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="https://urbanfarmconnect.com/" class="logo">Urban Farm Connect</a>
+                <ul class="nav-links">
+                    <li><a href="https://urbanfarmconnect.com/">Home</a></li>
+                    <li><a href="https://urbanfarmconnect.com/farmers">For Farmers</a></li>
+                    <li><a href="https://urbanfarmconnect.com/retailers">For Retailers</a></li>
+                    <li><a href="https://urbanfarmconnect.com/about">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>About Urban Farm Connect</h1>
+            <p>Bridging the gap between urban farmers and local businesses for a sustainable future.</p>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>Our Story</h2>
+                    <p>Urban Farm Connect was born from a simple idea: to create a seamless connection between urban farmers and local businesses. We recognized the growing trend of urban farming and the increasing demand for locally sourced produce in cities.</p>
+                    <p>Our platform aims to empower urban farmers by providing them with direct access to local markets, while simultaneously offering businesses and consumers the freshest, most sustainable produce available.</p>
+                    <p>Since our inception, we've been dedicated to fostering a more sustainable and connected local food ecosystem, supporting community growth, and promoting environmentally friendly practices.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Urban farming scene with people tending to a rooftop garden" width="600" height="400">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mission-vision-grid">
+                <div class="mission">
+                    <h3>Our Mission</h3>
+                    <p>To revolutionize urban food systems by creating a thriving marketplace that connects local farmers with businesses and consumers, promoting sustainability, community resilience, and economic growth.</p>
+                </div>
+                <div class="vision">
+                    <h3>Our Vision</h3>
+                    <p>A world where every urban community has access to fresh, locally grown produce, where urban farming is a viable and respected profession, and where the connection between food production and consumption is transparent and celebrated.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <h2>Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Sarah Johnson, CEO and Co-founder" width="300" height="250">
+                    <div class="team-member-info">
+                        <h3>Sarah Johnson</h3>
+                        <p>CEO and Co-founder</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Michael Lee, CTO and Co-founder" width="300" height="250">
+                    <div class="team-member-info">
+                        <h3>Michael Lee</h3>
+                        <p>CTO and Co-founder</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=988&q=80" alt="Emily Chen, Head of Partnerships" width="300" height="250">
+                    <div class="team-member-info">
+                        <h3>Emily Chen</h3>
+                        <p>Head of Partnerships</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Urban Farm Connect. All rights reserved.</p>
+        </div>
+    </footer>
+</body></html>
