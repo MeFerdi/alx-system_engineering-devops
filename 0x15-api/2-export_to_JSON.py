@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""accessing a REST API for todo lists of employees"""
+"""Accessing a REST API for todo lists of employees"""
 
 import json
 import requests
@@ -27,4 +27,3 @@ if __name__ == '__main__':
         })
     with open('{}.json'.format(employeeId), 'w') as filename:
         json.dump(dictionary, filename)
-        

@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# Function to display subdomain information
+display_subdomain_info() {
+    local subdomain=$1
+    local domain=$2
+    local record_type=$(dig "$subdomain.$domain" | awk '/^;; ANSWER SECTION:/ {getline; print $4}')
+    local destination=$(dig "$subdomain.$domain" | awk '/^;; ANSWER SECTION:/ {getline; print $5}')
+    echo "The subdomain $subdomain is a $record_type record and points to $destination"
+}
+
+# Check if domain parameter is provided
+if [ -z "$1" ]; then
+    echo "Usage: $0 domain [subdomain]"
+    exit 1
+fi
+
+# Set domain and subdomain parameters
+domain=$1
+subdomain="${2:-www}"
+
+# Configure domain zone
+## Point www subdomain to lb-01 IP
+echo "Adding www subdomain pointing to lb-01 IP..."
+dig "$domain" @ns1.p16.dynect.net -y "key:value" -P "www $domain 300 IN A lb-01-ip"
+
+## Point lb-01 subdomain to lb-01 IP
+echo "Adding lb-01 subdomain pointing to lb-01 IP..."
+dig "$domain" @ns1.p16.dynect.net -y "key:value" -P "lb-01 $domain 300 IN A lb-01-ip"
+
+## Point web-01 subdomain to web-01 IP
+echo "Adding web-01 subdomain pointing to web-01 IP..."
+dig "$domain" @ns1.p16.dynect.net -y "key:value" -P "web-01 $domain 300 IN A web-01-ip"
+
+## Point web-02 subdomain to web-02 IP
+echo "Adding web-02 subdomain pointing to web-02 IP..."
+dig "$domain" @ns1.p16.dynect.net -y "key:value" -P "web-02 $domain 300 IN A web-02-ip"
+
+# Display subdomain information
+if [ -z "$2" ]; then
+    display_subdomain_info "www" "$domain"
+    display_subdomain_info "lb-01" "$domain"
+    display_subdomain_info "web-01" "$domain"
+    display_subdomain_info "web-02" "$domain"
+else
+    display_subdomain_info "$subdomain" "$domain"
+fi

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Configure the SSH client configuration
+echo "Host *" >> ~/.ssh/config
+echo "  IdentityFile ~/.ssh/school" >> ~/.ssh/config
+echo "  PasswordAuthentication no" >> ~/.ssh/config
